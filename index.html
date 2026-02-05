@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prashant Care Global | Worldwide Donation</title>
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0; background-color: #f8f9fa; color: #333; }
+        header { background-color: #003087; color: white; padding: 20px; text-align: center; }
+        .hero { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=1350&q=80'); 
+                height: 250px; background-size: cover; color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+        .container { max-width: 600px; margin: -50px auto 50px; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
+        h2 { color: #003087; text-align: center; margin-top: 0; }
+        label { font-weight: bold; display: block; margin: 15px 0 5px; font-size: 14px; }
+        input, select { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box; }
+        .payment-methods { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 20px; }
+        .method-btn { padding: 15px; border: 2px solid #eee; border-radius: 10px; cursor: pointer; text-align: center; font-weight: bold; transition: 0.3s; }
+        .active { border-color: #003087; background: #f0f4ff; color: #003087; }
+        .details-area { background: #f9f9f9; padding: 15px; border-radius: 10px; margin-top: 20px; display: none; border-left: 5px solid #003087; }
+        .btn-final { width: 100%; padding: 15px; background: #28a745; color: white; border: none; border-radius: 10px; margin-top: 20px; font-size: 18px; font-weight: bold; cursor: pointer; }
+        .footer { background: #1a1a1a; color: white; text-align: center; padding: 20px; font-size: 13px; }
+    </style>
+</head>
+<body>
+
+<header><h1>Prashant Care Global</h1></header>
+
+<div class="hero">
+    <h2>Global Healthcare Mission</h2>
+    <p>आपका एक छोटा दान, किसी की जान बचा सकता है</p>
+</div>
+
+<div class="container">
+    <h2>Support Our Cause / समर्थन करें</h2>
+    
+    <label>Full Name / पूरा नाम</label>
+    <input type="text" id="donorName" placeholder="Your Name">
+    
+    <label>Amount / राशि</label>
+    <input type="number" id="amt" placeholder="Amount (USD/INR)">
+
+    <label>Choose Payment Method / भुगतान का तरीका चुनें</label>
+    <div class="payment-methods">
+        <div class="method-btn" id="btn-upi" onclick="showPay('upi')">UPI / QR</div>
+        <div class="method-btn" id="btn-paypal" onclick="showPay('paypal')">PayPal</div>
+        <div class="method-btn" id="btn-crypto" onclick="showPay('crypto')">Bitcoin / Crypto</div>
+        <div class="method-btn" id="btn-bank" onclick="showPay('bank')">Bank Transfer</div>
+    </div>
+
+    <div id="upi-info" class="details-area"><strong>UPI ID:</strong> APKI_UPI_ID@okaxis</div>
+    <div id="paypal-info" class="details-area"><strong>PayPal:</strong> paypal.me/APKA_PAYPAL_ID</div>
+    <div id="crypto-info" class="details-area"><strong>BTC:</strong> 1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa</div>
+    <div id="bank-info" class="details-area">
+        <strong>Bank:</strong> SBI | <strong>A/c:</strong> 000000123456789 <br>
+        <strong>IFSC:</strong> SBIN0001234
+    </div>
+
+    <button class="btn-final" onclick="finalMsg()">Complete Donation / दान पूरा करें</button>
+</div>
+
+<script>
+    function showPay(method) {
+        var areas = document.getElementsByClassName('details-area');
+        for(var i=0; i<areas.length; i++) { areas[i].style.display = 'none'; }
+        
+        var btns = document.getElementsByClassName('method-btn');
+        for(var i=0; i<btns.length; i++) { btns[i].classList.remove('active'); }
+
+        document.getElementById(method + '-info').style.display = 'block';
+        document.getElementById('btn-' + method).classList.add('active');
+    }
+
+    function finalMsg() {
+        var name = document.getElementById('donorName').value;
+        var amount = document.getElementById('amt').value;
+        
+        if(name == "" || amount == "") {
+            alert("Please enter Name and Amount!");
+            return;
+        }
+
+        if(document.getElementById('upi-info').style.display === 'block') {
+            window.location.href = "upi://pay?pa=APKI_UPI_ID@okaxis&pn=PrashantCare&am=" + amount;
+        } 
+        else if(document.getElementById('paypal-info').style.display === 'block') {
+            window.location.href = "https://www.paypal.me/APKA_PAYPAL_ID/" + amount;
+        } else {
+            alert("Thank you " + name + "!\nPlease use the details shown to complete your transfer.");
+        }
+    }
+</script>
+
+<div class="footer">
+    <p>&copy; 2026 Prashant Care Global | Worldwide Health Mission</p>
+</div>
+
+</body>
+</html>
