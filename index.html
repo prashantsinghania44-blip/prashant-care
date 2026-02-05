@@ -3,108 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Swaas Foundation | Giving Life a New Breath</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Swaas Foundation | Giving Hope to Children</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        :root { --accent: #e67e22; --dark: #1a1a1a; --text: #333; --light: #fdfaf5; }
-        
-        * { box-sizing: border-box; }
-        body { font-family: 'Poppins', sans-serif; margin: 0; color: var(--text); background: #fff; line-height: 1.6; overflow-x: hidden; }
+        :root { --orange: #ff5e14; --dark: #1a1a1a; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Poppins', sans-serif; color: #333; line-height: 1.6; }
 
-        /* Hero Section with AI Emotional Image */
+        /* Hero Section */
         .hero { 
-            height: 100vh; 
-            /* Yahan humne wo AI image ka link lagaya hai jo aapne pasand ki thi */
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2070&auto=format&fit=crop'); 
-            background-size: cover; 
-            background-position: center;
-            display: flex; flex-direction: column; justify-content: center; align-items: center;
-            color: white; text-align: center; padding: 20px;
+            height: 85vh; 
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('hero-bg.jpg'); 
+            background-size: cover; background-position: center;
+            display: flex; align-items: center; padding: 0 10%; color: white;
         }
+        .hero-text h2 { background: var(--orange); display: inline-block; padding: 5px 15px; font-size: 1.2rem; border-radius: 4px; margin-bottom: 15px; }
+        .hero-text h1 { font-size: clamp(3rem, 8vw, 5rem); line-height: 1; margin-bottom: 20px; font-weight: 700; }
+        .hero-text p { max-width: 500px; font-size: 1.1rem; margin-bottom: 30px; opacity: 0.9; }
 
-        .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(3rem, 8vw, 5rem); margin: 0; text-shadow: 2px 4px 10px rgba(0,0,0,0.5); }
-        .hero p { font-size: clamp(1rem, 4vw, 1.5rem); max-width: 700px; margin: 20px 0; font-style: italic; font-weight: 300; }
+        .btn-donate { background: var(--orange); color: white; padding: 16px 40px; border-radius: 5px; text-decoration: none; font-weight: bold; border: none; cursor: pointer; font-size: 1.1rem; transition: 0.3s; }
+        .btn-donate:hover { background: #e04d00; transform: translateY(-3px); }
 
-        .btn-main { background: var(--accent); color: white; padding: 18px 55px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 1.2rem; border: none; cursor: pointer; transition: 0.4s; box-shadow: 0 10px 30px rgba(230, 126, 34, 0.4); margin-top: 20px; }
-        .btn-main:hover { background: #d35400; transform: translateY(-3px); }
+        /* Impact Section (Orange Bar) */
+        .impact-bar { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); background: var(--orange); color: white; width: 90%; margin: -50px auto 0; position: relative; z-index: 10; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .impact-item { padding: 40px 20px; text-align: center; border-right: 1px solid rgba(255,255,255,0.2); }
+        .impact-item:last-child { border-right: none; }
+        .impact-item span { font-size: 2.5rem; display: block; margin-bottom: 10px; }
+        .impact-item h3 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; }
 
-        /* Impact Section */
-        .impact { padding: 80px 20px; text-align: center; background: var(--light); }
-        .impact h2 { font-family: 'Playfair Display', serif; font-size: 2.8rem; margin-bottom: 50px; color: var(--dark); }
-        
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
-        .card { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); transition: 0.3s; }
-        .card:hover { transform: translateY(-10px); }
-        .icon { font-size: 3.5rem; margin-bottom: 15px; display: block; }
-        .card h3 { font-family: 'Playfair Display', serif; margin-bottom: 15px; font-size: 1.6rem; }
-
-        /* Donation Modal */
+        /* Modal Settings */
         .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); backdrop-filter: blur(5px); }
-        .modal-content { background: white; margin: 10% auto; padding: 40px; border-radius: 30px; max-width: 450px; text-align: center; position: relative; animation: slideDown 0.4s; }
-        @keyframes slideDown { from { transform: translateY(-50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-        .close { position: absolute; right: 25px; top: 15px; font-size: 30px; cursor: pointer; color: #999; }
+        .modal-content { background: white; margin: 50px auto; padding: 30px; border-radius: 15px; max-width: 450px; position: relative; text-align: center; animation: animatetop 0.4s; }
+        @keyframes animatetop { from {top:-300px; opacity:0} to {top:0; opacity:1} }
+        .close { position: absolute; right: 20px; top: 10px; font-size: 30px; cursor: pointer; color: #888; }
+        
+        .pay-card { background: #f9f9f9; padding: 15px; margin: 12px 0; border-radius: 10px; border: 1px solid #eee; text-align: left; cursor: pointer; transition: 0.3s; }
+        .pay-card:hover { border-color: var(--orange); background: #fffaf7; }
+        .pay-card strong { color: var(--dark); display: block; margin-bottom: 5px; }
+        .details { display: none; padding: 10px; background: white; border-top: 1px solid #eee; margin-top: 10px; font-size: 0.9rem; color: #555; }
 
-        .pay-box { text-align: left; background: #f9f9f9; padding: 15px; border-radius: 15px; margin: 15px 0; border: 1px solid #eee; cursor: pointer; }
-        .pay-box:hover { border-color: var(--accent); background: #fff9f4; }
-        .details { display: none; padding: 10px; font-size: 0.95rem; border-top: 1px solid #ddd; margin-top: 10px; }
-
-        footer { padding: 60px 20px; background: var(--dark); color: #777; text-align: center; }
-        .f-logo { font-family: 'Playfair Display', serif; color: white; font-size: 2rem; display: block; margin-bottom: 10px; }
+        footer { background: #111; color: #888; padding: 60px 20px; text-align: center; margin-top: 50px; }
+        footer b { color: white; font-size: 1.5rem; }
     </style>
 </head>
 <body>
 
     <section class="hero">
-        <h1>Swaas Foundation</h1>
-        <p>"Because every soul deserves the breath of hope, dignity, and a better tomorrow."</p>
-        <button class="btn-main" onclick="openModal()">Donate Now</button>
-    </section>
-
-    <section class="impact">
-        <h2>Our Main Motive</h2>
-        <div class="grid">
-            <div class="card"><span class="icon">🎓</span><h3>Education</h3><p>Changing lives through books and knowledge.</p></div>
-            <div class="card"><span class="icon">🥣</span><h3>Food</h3><p>Providing nutrition to those who sleep hungry.</p></div>
-            <div class="card"><span class="icon">💊</span><h3>Medical</h3><p>Life-saving healthcare for the underprivileged.</p></div>
-            <div class="card"><span class="icon">👕</span><h3>Cloths</h3><p>Warmth and dignity through essential clothing.</p></div>
+        <div class="hero-text">
+            <h2>FOR THE CHILDREN</h2>
+            <h1>SWAAS<br>FOUNDATION</h1>
+            <p>"Because every soul deserves the breath of hope, dignity, and a better tomorrow."</p>
+            <button class="btn-donate" onclick="openModal()">Donate Now</button>
         </div>
     </section>
 
-    <div id="payModal" class="modal">
+    <div class="impact-bar">
+        <div class="impact-item"><span>🎓</span><h3>Education</h3></div>
+        <div class="impact-item"><span>🍲</span><h3>Food</h3></div>
+        <div class="impact-item"><span>🏥</span><h3>Medical</h3></div>
+        <div class="impact-item"><span>👕</span><h3>Cloths</h3></div>
+    </div>
+
+    <div id="donateModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
-            <h2 style="font-family: 'Playfair Display', serif;">Support Swaas</h2>
-            <p>Your small gift can bring a huge change.</p>
+            <h2 style="color: var(--orange); margin-bottom: 10px;">Make a Difference</h2>
+            <p style="font-size: 0.9rem; margin-bottom: 20px;">Choose your preferred payment method:</p>
 
-            <div class="pay-box" onclick="toggle('upi')">
-                <strong>🇮🇳 UPI (PhonePe/GPay)</strong>
-                <div id="upi" class="details">ID: <strong>singhaniaprashant44@okicici</strong></div>
+            <div class="pay-card" onclick="toggle('upi')">
+                <strong>1. UPI Transfer</strong>
+                <div id="upi" class="details">UPI ID: <b>singhaniaprashant44@okicici</b></div>
             </div>
 
-            <div class="pay-box" onclick="toggle('bank')">
-                <strong>🏦 Bank Transfer</strong>
-                <div id="bank" class="details">Name: Swaas Foundation<br>Bank: [Bank Name]<br>A/C: [Acc No]<br>IFSC: [IFSC]</div>
+            <div class="pay-card" onclick="toggle('bank')">
+                <strong>2. Bank Transfer</strong>
+                <div id="bank" class="details">
+                    Bank Name: <b>[UCO BANK]</b><br>
+                    Acc No: <b>[32370110014899]</b><br>
+                    IFSC: <b>[UCBA0003237]</b>
+                </div>
             </div>
 
-            <div class="pay-box" onclick="window.open('https://paypal.me/YOUR_USER', '_blank')">
-                <strong>🌍 PayPal (Global)</strong>
+            <div class="pay-card" onclick="toggle('crypto')">
+                <strong>3. Crypto (Bitcoin)</strong>
+                <div id="crypto" class="details">BTC: <b>13RsYZuLbNrfg7cChsz7LCsW9GwQb31i7e</b></div>
+            </div>
+
+            <div class="pay-card">
+                <strong>4. PayPal (International)</strong>
+                <div class="details" style="display:block; border:none; color: #999;">Link Coming Soon</div>
             </div>
         </div>
     </div>
 
     <footer>
-        <span class="f-logo">Swaas Foundation</span>
-        <p>&copy; 2026 NGO. All Rights Reserved. | Managed by Prashant Singhania</p>
+        <b>Swaas Foundation</b>
+        <p style="margin-top:10px;">Helping those in need since 2026</p>
+        <p style="font-size: 0.8rem; margin-top:20px;">&copy; Managed by Prashant Singhania</p>
     </footer>
 
     <script>
-        function openModal() { document.getElementById('payModal').style.display = 'block'; }
-        function closeModal() { document.getElementById('payModal').style.display = 'none'; }
-        function toggle(id) { 
-            let el = document.getElementById(id);
-            el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+        function openModal() { document.getElementById('donateModal').style.display = 'block'; }
+        function closeModal() { document.getElementById('donateModal').style.display = 'none'; }
+        function toggle(id) {
+            var x = document.getElementById(id);
+            x.style.display = (x.style.display === 'block') ? 'none' : 'block';
         }
-        window.onclick = function(e) { if(e.target == document.getElementById('payModal')) closeModal(); }
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('donateModal')) closeModal();
+        }
     </script>
 
 </body>
