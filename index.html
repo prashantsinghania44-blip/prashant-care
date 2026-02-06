@@ -9,63 +9,72 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
         body { background-color: #ffffff; color: #333; line-height: 1.6; }
 
+        /* Floating WhatsApp */
         .floating-ws { position: fixed; bottom: 20px; right: 20px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); z-index: 1000; text-decoration: none; }
         
+        /* Navbar */
         nav { background: white; padding: 15px 8%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 15px rgba(0,0,0,0.05); }
         .logo { font-weight: 800; font-size: 1.6rem; color: #ff5722; text-decoration: none; display: flex; align-items: center; gap: 8px; }
         .nav-links { display: flex; align-items: center; }
-        .nav-links a { text-decoration: none; color: #444; margin-left: 15px; font-weight: 600; font-size: 0.9rem; }
+        .nav-links a { text-decoration: none; color: #444; margin-left: 15px; font-weight: 600; font-size: 0.85rem; }
 
+        /* Hero Section */
         .hero {
             height: 85vh;
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
                         url('1000095226.jpg') no-repeat center center/cover;
             display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white; padding: 20px;
         }
-        .hero h1 { font-size: clamp(2.5rem, 8vw, 4rem); margin-bottom: 10px; text-shadow: 2px 2px 8px rgba(0,0,0,0.5); }
-        .tagline { font-size: 1.2rem; margin-bottom: 35px; max-width: 850px; font-style: italic; }
-        .btn-donate { background: #ff5722; color: white; padding: 15px 35px; text-decoration: none; font-weight: bold; border-radius: 50px; box-shadow: 0 10px 20px rgba(255,87,34,0.3); }
+        .hero h1 { font-size: clamp(2.5rem, 8vw, 3.5rem); margin-bottom: 10px; }
+        .tagline { font-size: 1.1rem; margin-bottom: 30px; max-width: 800px; font-style: italic; }
+        .btn-join-hero { background: #ff5722; color: white; padding: 12px 30px; text-decoration: none; font-weight: bold; border-radius: 50px; font-size: 0.9rem; text-transform: uppercase; }
 
+        /* Sections */
         .section { padding: 60px 10%; text-align: center; }
-        .section h2 { font-size: 2.2rem; margin-bottom: 30px; }
+        .section h2 { font-size: 2rem; margin-bottom: 30px; }
         .section h2 span { color: #ff5722; }
 
-        /* VISION & MISSION */
-        .vision-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 50px; }
-        .vision-card { background: #fffaf9; padding: 30px; border-radius: 20px; border: 1px solid #ffe0d6; text-align: left; }
-        .vision-card i { font-size: 2.5rem; color: #ff5722; margin-bottom: 15px; }
+        /* Vision & Mission Cards */
+        .vision-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-bottom: 50px; }
+        .vision-card { background: #fffaf9; padding: 30px; border-radius: 15px; border: 1px solid #ffe0d6; text-align: left; box-shadow: 0 4px 10px rgba(0,0,0,0.02); }
+        .vision-card i { font-size: 2.2rem; color: #ff5722; margin-bottom: 15px; }
 
-        /* TEAM */
-        .team-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-bottom: 40px; }
-        .team-card { background: white; padding: 25px; border-radius: 15px; width: 250px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: center; }
-        .team-icon { width: 100px; height: 100px; background: #fff5f2; border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; color: #ff5722; border: 2px solid #ff5722; }
+        /* Team Section */
+        .team-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; margin-bottom: 60px; }
+        .team-card { text-align: center; width: 200px; }
+        .team-icon { width: 120px; height: 120px; border: 2px solid #ff5722; border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; color: #ff5722; font-size: 3rem; }
+        .team-card h4 { font-size: 1rem; }
+        .team-card p { font-size: 0.85rem; color: #666; }
 
-        /* IMPACT */
+        /* Impact Section */
         .impact-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
-        .impact-card { background: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.05); border-bottom: 4px solid #ff5722; }
+        .impact-card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-bottom: 4px solid #ff5722; }
         .impact-card i { font-size: 2rem; color: #ff5722; margin-bottom: 10px; }
 
-        .trust-banner { background: #fff5f2; padding: 30px; border-radius: 20px; margin: 40px auto; max-width: 900px; display: flex; align-items: center; gap: 20px; text-align: left; border: 1px dashed #ff5722; }
+        .trust-banner { background: #fff5f2; padding: 25px; border-radius: 15px; margin: 40px auto; max-width: 900px; display: flex; align-items: center; gap: 20px; text-align: left; border: 1px dashed #ff5722; }
 
-        /* CONTACT */
-        .contact-info { text-align: left; max-width: 600px; margin: 0 auto; }
-        .contact-item { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; font-size: 1.1rem; }
-        .contact-item i { color: #ff5722; font-size: 1.4rem; }
+        /* Contact Section */
+        .contact-info { text-align: left; max-width: 700px; margin: 0 auto; }
+        .contact-item { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 20px; font-size: 1rem; }
+        .contact-item i { color: #ff5722; margin-top: 5px; }
 
-        /* MODALS */
-        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); justify-content: center; align-items: center; z-index: 2000; }
+        /* Modals */
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); justify-content: center; align-items: center; z-index: 2000; padding: 20px; }
         .modal:target { display: flex; }
-        .modal-content { background: white; padding: 30px; border-radius: 25px; width: 90%; max-width: 450px; position: relative; text-align: center; }
+        .modal-content { background: white; padding: 30px; border-radius: 20px; width: 100%; max-width: 500px; position: relative; max-height: 90vh; overflow-y: auto; }
         .close-btn { position: absolute; top: 15px; right: 20px; text-decoration: none; font-size: 25px; color: #999; }
         
-        .form-group { text-align: left; margin-bottom: 15px; }
-        .form-group label { display: block; font-weight: 600; margin-bottom: 5px; }
-        .form-group input, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 10px; }
-        .btn-submit { background: #ff5722; color: white; border: none; padding: 12px; border-radius: 10px; font-weight: bold; cursor: pointer; width: 100%; }
+        /* Form Styles */
+        .form-group { text-align: left; margin-bottom: 12px; }
+        .form-group label { display: block; font-weight: 600; margin-bottom: 5px; font-size: 0.85rem; }
+        .form-group input, .form-group textarea { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px; font-size: 0.9rem; }
+        .btn-submit { background: #ff5722; color: white; border: none; padding: 12px; border-radius: 8px; font-weight: bold; width: 100%; cursor: pointer; margin-top: 10px; }
 
-        .pay-card { background: #fdfdfd; padding: 15px; border-radius: 12px; margin-top: 15px; border-left: 5px solid #ff5722; text-align: left; font-size: 0.85rem; }
+        /* Payment Cards */
+        .pay-card { background: #f9f9f9; padding: 15px; border-radius: 10px; margin-top: 15px; border-left: 5px solid #ff5722; text-align: left; position: relative; }
+        .coming-soon { float: right; background: #999; color: white; font-size: 0.7rem; padding: 2px 8px; border-radius: 4px; }
 
-        footer { background: #1a1a1a; color: white; padding: 30px 10%; text-align: center; }
+        footer { background: #1a1a1a; color: white; padding: 30px 10%; text-align: center; font-size: 0.85rem; }
     </style>
 </head>
 <body>
@@ -86,7 +95,7 @@
     <section class="hero">
         <h1>Swaas Foundation</h1>
         <p class="tagline">"Because every soul deserves the breath of hope, dignity and a better tomorrow."</p>
-        <a href="#donate" class="btn-donate">💖 JOIN OUR MISSION</a>
+        <a href="#join-modal" class="btn-join-hero">🚀 JOIN OUR MISSION</a>
     </section>
 
     <section class="section" id="about">
@@ -97,7 +106,7 @@
                 <h3>Our Vision</h3>
                 <p>Ek aisa samaj jahan har insaan ke paas samman, swasthya aur shiksha ho. Hum Bihar mein khush-haali ki ek nayi lehar lana chahte hain.</p>
             </div>
-            <div class="vision-card" style="background: #fff;">
+            <div class="vision-card">
                 <i class="fas fa-bullseye"></i>
                 <h3>Our Mission</h3>
                 <p>Garibi aur lachari ke khilaaf ek majboot aawaz banna. 'Swaas' ban kar unka saath dena jinhe hamari sabse zyada zaroorat hai.</p>
@@ -127,10 +136,10 @@
             <div class="impact-card"><i class="fas fa-map-marker-alt"></i><h3>Bihar</h3><p>Operation Hub</p></div>
         </div>
         <div class="trust-banner">
-            <i class="fas fa-shield-alt" style="font-size: 2.5rem; color: #ff5722;"></i>
+            <i class="fas fa-shield-alt" style="font-size: 2.2rem; color: #ff5722;"></i>
             <div>
-                <h3>100% Transparency Guaranteed</h3>
-                <p>Every rupee donated is used for social welfare. We maintain open records of all relief work.</p>
+                <h4 style="margin-bottom: 5px;">100% Transparency Guaranteed</h4>
+                <p style="font-size: 0.85rem;">Every rupee donated is used for social welfare. We maintain open records of all relief work.</p>
             </div>
         </div>
     </section>
@@ -138,21 +147,25 @@
     <section class="section" id="contact">
         <h2>Connect <span>With Us</span></h2>
         <div class="contact-info">
-            <div class="contact-item"><i class="fas fa-map-marker-alt"></i> G.L. Complex, Aliganj Mirjanhat road, Bhagalpur, Bihar - 812005</div>
-            <div class="contact-item"><i class="fas fa-phone-alt"></i> +91 8797215899</div>
-            <div class="contact-item"><i class="fas fa-envelope"></i> info.swaas@gmail.com</div>
+            <div class="contact-item"><i class="fas fa-map-marker-alt"></i> <div><strong>Address:</strong><br>G.L. Complex, Aliganj Mirjanhat road, Bhagalpur, Bihar - 812005</div></div>
+            <div class="contact-item"><i class="fas fa-phone-alt"></i> <div><strong>Call/WhatsApp:</strong><br>+91 8797215899</div></div>
+            <div class="contact-item"><i class="fas fa-envelope"></i> <div><strong>Email:</strong><br>info.swaas@gmail.com</div></div>
         </div>
     </section>
 
     <div id="join-modal" class="modal">
         <div class="modal-content">
             <a href="#" class="close-btn">&times;</a>
-            <h3>Become a Volunteer</h3>
-            <form onsubmit="sendToWhatsApp(event)">
-                <div class="form-group"><label>Name</label><input type="text" id="v_name" required></div>
-                <div class="form-group"><label>WhatsApp No</label><input type="tel" id="v_phone" required></div>
-                <div class="form-group"><label>City</label><input type="text" id="v_city" required></div>
-                <button type="submit" class="btn-submit">Register Now</button>
+            <h3 style="margin-bottom: 15px; color: #ff5722;">Become a Volunteer</h3>
+            <form onsubmit="sendVolunteerData(event)">
+                <div class="form-group"><label>Full Name</label><input type="text" id="v_name" placeholder="Full Name" required></div>
+                <div class="form-group"><label>City</label><input type="text" id="v_city" placeholder="Your City" required></div>
+                <div class="form-group"><label>Calling No.</label><input type="tel" id="v_call" placeholder="Calling Number" required></div>
+                <div class="form-group"><label>WhatsApp No.</label><input type="tel" id="v_wa" placeholder="WhatsApp Number" required></div>
+                <div class="form-group"><label>Email ID</label><input type="email" id="v_email" placeholder="Email Address" required></div>
+                <div class="form-group"><label>Aadhar Card Details</label><input type="text" id="v_aadhar" placeholder="Aadhar Number" required></div>
+                <div class="form-group"><label>Why do you want to join?</label><textarea id="v_reason" rows="2" placeholder="Tell us your motivation..." required></textarea></div>
+                <button type="submit" class="btn-submit">SUBMIT DETAILS</button>
             </form>
         </div>
     </div>
@@ -160,10 +173,14 @@
     <div id="donate" class="modal">
         <div class="modal-content">
             <a href="#" class="close-btn">&times;</a>
-            <h3>Support Our Cause</h3>
-            <div class="pay-card"><strong>Bank:</strong> UCO BANK | A/C: 32370110014899 | UCBA0003237</div>
+            <h3 style="margin-bottom: 20px;">Support Our Cause</h3>
+            <div class="pay-card"><strong>Bank:</strong> UCO BANK<br>A/C: 32370110014899 | IFSC: UCBA0003237</div>
             <div class="pay-card" style="border-color: #2e7d32;"><strong>UPI:</strong> prashantsinghania44-1@okaxis</div>
             <div class="pay-card" style="border-color: #f2a900;"><strong>Bitcoin:</strong> 13RsYZuLbNrfg7cChsz7LCsW9GwQb31i7e</div>
+            <div class="pay-card" style="border-color: #003087;">
+                <span class="coming-soon">Coming Soon</span>
+                <strong>PayPal:</strong> International Donations
+            </div>
         </div>
     </div>
 
@@ -172,13 +189,18 @@
     </footer>
 
     <script>
-        function sendToWhatsApp(e) {
+        function sendVolunteerData(e) {
             e.preventDefault();
             let name = document.getElementById('v_name').value;
-            let phone = document.getElementById('v_phone').value;
             let city = document.getElementById('v_city').value;
-            let message = `Volunteer Registration:%0AName: ${name}%0APhone: ${phone}%0ACity: ${city}`;
-            window.open(`https://wa.me/918797215899?text=${message}`, '_blank');
+            let call = document.getElementById('v_call').value;
+            let wa = document.getElementById('v_wa').value;
+            let email = document.getElementById('v_email').value;
+            let aadhar = document.getElementById('v_aadhar').value;
+            let reason = document.getElementById('v_reason').value;
+
+            let msg = `*New Volunteer Registration*%0A%0A*Name:* ${name}%0A*City:* ${city}%0A*Call:* ${call}%0A*WhatsApp:* ${wa}%0A*Email:* ${email}%0A*Aadhar:* ${aadhar}%0A*Reason:* ${reason}`;
+            window.open(`https://wa.me/918797215899?text=${msg}`, '_blank');
         }
     </script>
 </body>
