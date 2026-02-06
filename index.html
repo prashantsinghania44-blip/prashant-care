@@ -5,15 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Swaas Foundation | Serving Humanity</title>
     <style>
-        /* Basic Setup */
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; scroll-behavior: smooth; }
         body { background-color: #f9f9f9; color: #333; line-height: 1.6; }
 
-        /* Navigation Bar */
+        /* Navigation */
         nav { background: white; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
         .logo { font-weight: 800; font-size: 1.5rem; color: #ff5722; text-decoration: none; }
-        .nav-links a { text-decoration: none; color: #555; margin-left: 20px; font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
-        .nav-links a:hover { color: #ff5722; }
+        .nav-links a { text-decoration: none; color: #555; margin-left: 20px; font-weight: 600; font-size: 0.9rem; }
 
         /* Hero Section */
         .hero {
@@ -22,36 +20,35 @@
                         url('eCharity.webp') no-repeat center center/cover;
             display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white; padding: 20px;
         }
-        .hero h1 { font-size: clamp(2.5rem, 8vw, 4rem); margin-bottom: 15px; }
-        .btn-donate { background: #ff5722; color: white; padding: 16px 45px; text-decoration: none; font-weight: bold; border-radius: 50px; transition: 0.3s; box-shadow: 0 5px 15px rgba(255,87,34,0.4); }
+        .hero h1 { font-size: clamp(2.5rem, 8vw, 4rem); margin-bottom: 10px; }
+        .tagline { font-size: 1.2rem; margin-bottom: 30px; max-width: 800px; font-style: italic; color: rgba(255,255,255,0.9); }
+        .btn-donate { background: #ff5722; color: white; padding: 16px 45px; text-decoration: none; font-weight: bold; border-radius: 50px; box-shadow: 0 5px 15px rgba(255,87,34,0.4); }
 
-        /* Sections */
-        .section { padding: 80px 10%; text-align: center; }
-        .section h2 { font-size: 2.2rem; margin-bottom: 20px; color: #222; position: relative; padding-bottom: 10px; }
-        .section h2::after { content: ''; width: 50px; height: 4px; background: #ff5722; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
+        /* Simple Sections */
+        .section { padding: 60px 10%; text-align: center; }
+        .section h2 { font-size: 2.2rem; margin-bottom: 40px; color: #222; }
 
-        /* Impact Cards */
-        .impact-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 40px; }
-        .impact-card { background: white; padding: 30px; border-radius: 20px; width: 250px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
-        .impact-card h3 { font-size: 2.5rem; color: #ff5722; }
+        /* Impact Cards (As per your Screenshot) */
+        .impact-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
+        .impact-card { background: white; padding: 30px; border-radius: 20px; width: 250px; box-shadow: 0 5px 25px rgba(0,0,0,0.05); border-bottom: 4px solid #ff5722; }
+        .impact-card h3 { font-size: 2.5rem; color: #ff5722; margin-bottom: 5px; }
 
-        /* Contact Section */
-        .contact-container { display: flex; flex-wrap: wrap; gap: 40px; margin-top: 40px; text-align: left; }
+        /* Contact Section (As per your Screenshot) */
+        .contact-container { display: flex; flex-wrap: wrap; gap: 40px; margin-top: 20px; text-align: left; }
         .contact-info { flex: 1; min-width: 300px; }
         .contact-form { flex: 1; min-width: 300px; background: white; padding: 30px; border-radius: 20px; box-shadow: 0 5px 25px rgba(0,0,0,0.1); }
-        .contact-form input, .contact-form textarea { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 8px; outline: none; }
-        .contact-form button { background: #ff5722; color: white; border: none; padding: 12px 30px; border-radius: 8px; font-weight: bold; cursor: pointer; width: 100%; transition: 0.3s; }
-        .contact-form button:hover { background: #e64a19; }
+        .contact-form input, .contact-form textarea { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 8px; }
+        .contact-form button { background: #ff5722; color: white; border: none; padding: 12px 30px; border-radius: 8px; width: 100%; cursor: pointer; font-weight: bold; }
 
         /* Donation Modal */
         .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); justify-content: center; align-items: center; z-index: 1000; padding: 15px; }
         .modal:target { display: flex; }
-        .modal-content { background: white; padding: 30px; border-radius: 25px; width: 100%; max-width: 450px; color: #333; position: relative; }
+        .modal-content { background: white; padding: 30px; border-radius: 25px; width: 100%; max-width: 450px; position: relative; }
         .close-btn { position: absolute; top: 15px; right: 20px; text-decoration: none; font-size: 28px; color: #999; }
         .pay-card { padding: 12px; border-radius: 10px; margin-top: 10px; border-left: 5px solid #ff5722; background: #fdf2f0; }
-        .details { font-family: monospace; font-size: 0.95rem; font-weight: bold; }
 
-        footer { background: #1a1a1a; color: white; padding: 40px 10%; text-align: center; margin-top: 50px; }
+        footer { background: #1a1a1a; color: white; padding: 40px 10%; text-align: center; }
+        .whatsapp-btn { color: #25D366; text-decoration: none; font-weight: bold; }
     </style>
 </head>
 <body>
@@ -60,7 +57,7 @@
         <a href="#" class="logo">SWAAS</a>
         <div class="nav-links">
             <a href="#">Home</a>
-            <a href="#about">About</a>
+            <a href="#impact">Impact</a>
             <a href="#contact">Contact</a>
             <a href="#donate" style="color: #ff5722;">Donate</a>
         </div>
@@ -68,7 +65,7 @@
 
     <section class="hero">
         <h1>Swaas Foundation</h1>
-        <p>Serving humanity with transparency and love.</p>
+        <p class="tagline">"Because every soul deserves the breath of hope, dignity and a better tomorrow."</p>
         <a href="#donate" class="btn-donate">💖 DONATE NOW</a>
     </section>
 
@@ -85,20 +82,20 @@
         <div class="contact-container">
             <div class="contact-info">
                 <h3 style="margin-bottom: 15px; color: #ff5722;">Official Address</h3>
-                <p><strong>📍 Swaas Foundation HQ:</strong><br>
-                [Aapka Gali/Mohalla Name],<br>
-                [Aapka Shahar/City], [State] - [Pincode]<br>
-                India</p>
+                <p>📍 <strong>G.L.Complex, Aliganj Mirjanhat road,</strong><br>
+                Infront of Bagbari main Gate,<br>
+                Bhagalpur, Bihar - 812005</p>
                 <br>
-                <p><strong>📞 Phone:</strong> +91 [Aapka Number]</p>
-                <p><strong>✉️ Email:</strong> info.swaas@gmail.com</p>
+                <p>📞 <strong>Call:</strong> +91 8797215899</p>
+                <p>💬 <strong>WhatsApp:</strong> <a href="https://wa.me/918797215899" class="whatsapp-btn">Click to Chat</a></p>
+                <p>✉️ <strong>Email:</strong> info.swaas@gmail.com</p>
             </div>
             <div class="contact-form">
                 <h3 style="margin-bottom: 20px;">Send a Message</h3>
                 <form>
                     <input type="text" placeholder="Your Name" required>
                     <input type="email" placeholder="Your Email" required>
-                    <textarea rows="4" placeholder="How can you help?"></textarea>
+                    <textarea rows="4" placeholder="How can you help?" required></textarea>
                     <button type="submit">Submit Message</button>
                 </form>
             </div>
@@ -108,16 +105,16 @@
     <div id="donate" class="modal">
         <div class="modal-content">
             <a href="#" class="close-btn">&times;</a>
-            <h2 style="text-align:center;">Make a Donation</h2>
-            <div class="pay-card"><p>BANK: UCO BANK</p><div class="details">32370110014899 | UCBA0003237</div></div>
-            <div class="pay-card" style="border-left-color: #2e7d32; background: #e8f5e9;"><p>UPI</p><div class="details">prashantsinghania44-1@okaxis</div></div>
-            <div class="pay-card" style="border-left-color: #f2a900; background: #fff8e1;"><p>CRYPTO (BTC)</p><div class="details">13RsYZuLbNrfg7cChsz7LCsW9GwQb31i7e</div></div>
-            <div class="pay-card" style="border-left-color: #003087; background: #f0f4f8;"><p>PAYPAL</p><div class="details">Coming Soon...</div></div>
+            <h2 style="text-align:center; margin-bottom:15px;">Support Our Cause</h2>
+            <div class="pay-card"><p>UCO BANK</p><strong>32370110014899 | UCBA0003237</strong></div>
+            <div class="pay-card" style="border-left-color: #2e7d32;"><p>UPI</p><strong>prashantsinghania44-1@okaxis</strong></div>
+            <div class="pay-card" style="border-left-color: #f2a900;"><p>BTC</p><strong>13RsYZuLbNrfg7cChsz7LCsW9GwQb31i7e</strong></div>
+            <div class="pay-card" style="border-left-color: #003087;"><p>PayPal</p><em>Coming Soon...</em></div>
         </div>
     </div>
 
     <footer>
-        <p>© 2026 Swaas Foundation. All Rights Reserved.</p>
+        <p>© 2026 Swaas Foundation | Bhagalpur, Bihar</p>
     </footer>
 
 </body>
