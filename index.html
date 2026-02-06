@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Swaas Foundation | Making a Difference</title>
+    <title>Swaas Foundation | Support Us</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, sans-serif; }
         
         .hero {
             height: 100vh;
@@ -20,13 +20,13 @@
             padding: 20px;
         }
 
-        h1 { font-size: clamp(2.5rem, 8vw, 4rem); margin-bottom: 10px; font-weight: 800; letter-spacing: 1px; }
-        p { font-size: 1.2rem; margin-bottom: 30px; max-width: 650px; opacity: 0.9; }
+        h1 { font-size: clamp(2.5rem, 8vw, 4rem); margin-bottom: 10px; font-weight: 800; }
+        p { font-size: 1.1rem; margin-bottom: 30px; max-width: 600px; opacity: 0.9; line-height: 1.5; }
 
         .btn-donate {
             background-color: #ff5722;
             color: white;
-            padding: 18px 40px;
+            padding: 18px 45px;
             text-decoration: none;
             font-weight: bold;
             border-radius: 50px;
@@ -34,39 +34,45 @@
             box-shadow: 0 5px 20px rgba(255,87,34,0.4);
             transition: 0.3s;
         }
-        .btn-donate:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(255,87,34,0.5); }
+        .btn-donate:hover { transform: scale(1.05); background-color: #f4511e; }
 
-        /* Modal Box */
-        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); justify-content: center; align-items: center; z-index: 1000; padding: 15px; }
+        /* Modal Overlay */
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); justify-content: center; align-items: center; z-index: 1000; overflow-y: auto; padding: 20px; }
         .modal:target { display: flex; }
-        .modal-content { background: white; padding: 25px; border-radius: 20px; width: 100%; max-width: 420px; color: #333; position: relative; }
         
-        .close-btn { position: absolute; top: 15px; right: 20px; text-decoration: none; font-size: 25px; color: #666; font-weight: bold; }
+        /* Modal Content */
+        .modal-content { background: white; padding: 30px; border-radius: 25px; width: 100%; max-width: 450px; color: #333; position: relative; }
+        .close-btn { position: absolute; top: 15px; right: 20px; text-decoration: none; font-size: 30px; color: #999; }
         
-        .card { background: #fdf2f0; padding: 15px; border-radius: 12px; margin-top: 15px; border-left: 5px solid #ff5722; }
-        .card h3 { font-size: 0.85rem; color: #ff5722; margin-bottom: 5px; text-transform: uppercase; }
-        .details { font-family: 'Courier New', Courier, monospace; font-size: 0.95rem; font-weight: bold; word-break: break-all; color: #222; }
+        .card { padding: 15px; border-radius: 12px; margin-top: 12px; border-left: 5px solid #ff5722; background: #fdf2f0; }
+        .card h3 { font-size: 0.8rem; color: #ff5722; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 1px; }
+        .details { font-family: 'Courier New', monospace; font-size: 0.95rem; font-weight: bold; word-break: break-all; color: #222; }
 
-        footer { position: absolute; bottom: 15px; color: rgba(255,255,255,0.6); font-size: 0.8rem; }
+        /* Specific Colors for different methods */
+        .upi { border-left-color: #2e7d32; background: #e8f5e9; }
+        .upi h3 { color: #2e7d32; }
+        .paypal { border-left-color: #003087; background: #e3f2fd; }
+        .paypal h3 { color: #003087; }
+        .crypto { border-left-color: #f2a900; background: #fff8e1; }
+        .crypto h3 { color: #f2a900; }
     </style>
 </head>
 <body>
 
     <div class="hero">
         <h1>Swaas Foundation</h1>
-        <p>Your small act of kindness can ignite a light of hope in someone's life. Join us in our journey of giving.</p>
+        <p>Serving those in need. Your contribution helps us provide healthcare and support to the underprivileged.</p>
         <a href="#donate" class="btn-donate">DONATE NOW</a>
-        <footer>© 2026 Swaas Foundation | Serving Humanity</footer>
     </div>
 
     <div id="donate" class="modal">
         <div class="modal-content">
             <a href="#" class="close-btn">&times;</a>
-            <h2 style="text-align:center; margin-bottom: 10px; font-size: 1.5rem;">Support Our Cause</h2>
-            <p style="text-align:center; font-size: 0.9rem; color: #666; margin-bottom: 10px;">Please find the payment details below:</p>
+            <h2 style="text-align:center; margin-bottom: 5px;">Payment Details</h2>
+            <p style="text-align:center; font-size: 0.85rem; color: #777; margin-bottom: 15px;">Choose your preferred method</p>
             
             <div class="card">
-                <h3>Bank Details (India)</h3>
+                <h3>Bank Transfer (India)</h3>
                 <div class="details">
                     Bank: UCO BANK<br>
                     A/C: 32370110014899<br>
@@ -74,21 +80,22 @@
                 </div>
             </div>
 
-            <div class="card" style="border-left-color: #2e7d32; background: #e8f5e9;">
+            <div class="card upi">
                 <h3>UPI ID</h3>
-                <div class="details">
-                    prashantsinghania44-1@okaxis
-                </div>
+                <div class="details">prashantsinghania44-1@okaxis</div>
             </div>
 
-            <div class="card" style="border-left-color: #f2a900; background: #fff8e1;">
-                <h3>Crypto Wallet (BTC)</h3>
-                <div class="details">
-                    13RsYZuLbNrfg7cChsz7LCsW9GwQb31i7e
-                </div>
+            <div class="card paypal">
+                <h3>PayPal (Global)</h3>
+                <div class="details">[Aapka PayPal Email Yahan Likhein]</div>
             </div>
 
-            <p style="text-align:center; font-size:0.75rem; margin-top:20px; color:#999;">After donating, please share the screenshot for acknowledgment.</p>
+            <div class="card crypto">
+                <h3>Crypto (BTC)</h3>
+                <div class="details">13RsYZuLbNrfg7cChsz7LCsW9GwQb31i7e</div>
+            </div>
+
+            <p style="text-align:center; font-size:0.7rem; margin-top:20px; color:#999;">Kindly share a screenshot after payment for acknowledgment.</p>
         </div>
     </div>
 
