@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Swaas Foundation - Donate for Children</title>
+    <title>Swaas Foundation | Making a Difference</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('IMG_20260205_153707.jpg');
-            background-size: cover;
-            background-position: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('eCharity.webp') no-repeat center center/cover;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -21,91 +20,75 @@
             padding: 20px;
         }
 
-        h1 { font-size: 3rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; }
-        p { font-size: 1.2rem; margin-bottom: 30px; max-width: 600px; }
+        h1 { font-size: clamp(2.5rem, 8vw, 4rem); margin-bottom: 10px; font-weight: 800; letter-spacing: 1px; }
+        p { font-size: 1.2rem; margin-bottom: 30px; max-width: 650px; opacity: 0.9; }
 
         .btn-donate {
             background-color: #ff5722;
             color: white;
-            padding: 15px 40px;
+            padding: 18px 40px;
             text-decoration: none;
-            font-size: 1.2rem;
             font-weight: bold;
             border-radius: 50px;
+            font-size: 1.1rem;
+            box-shadow: 0 5px 20px rgba(255,87,34,0.4);
             transition: 0.3s;
-            box-shadow: 0 4px 15px rgba(255, 87, 34, 0.4);
         }
+        .btn-donate:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(255,87,34,0.5); }
 
-        .btn-donate:hover { background-color: #e64a19; transform: scale(1.05); }
-
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.8);
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
-
+        /* Modal Box */
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); justify-content: center; align-items: center; z-index: 1000; padding: 15px; }
         .modal:target { display: flex; }
+        .modal-content { background: white; padding: 25px; border-radius: 20px; width: 100%; max-width: 420px; color: #333; position: relative; }
+        
+        .close-btn { position: absolute; top: 15px; right: 20px; text-decoration: none; font-size: 25px; color: #666; font-weight: bold; }
+        
+        .card { background: #fdf2f0; padding: 15px; border-radius: 12px; margin-top: 15px; border-left: 5px solid #ff5722; }
+        .card h3 { font-size: 0.85rem; color: #ff5722; margin-bottom: 5px; text-transform: uppercase; }
+        .details { font-family: 'Courier New', Courier, monospace; font-size: 0.95rem; font-weight: bold; word-break: break-all; color: #222; }
 
-        .modal-content {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            width: 90%;
-            max-width: 400px;
-            color: #333;
-            text-align: left;
-            position: relative;
-        }
-
-        .close-btn {
-            position: absolute;
-            top: 10px; right: 15px;
-            text-decoration: none;
-            font-size: 24px;
-            color: #333;
-            font-weight: bold;
-        }
-
-        .bank-details {
-            margin-top: 20px;
-            background: #f4f4f4;
-            padding: 15px;
-            border-radius: 8px;
-            border-left: 5px solid #ff5722;
-            line-height: 1.6;
-        }
+        footer { position: absolute; bottom: 15px; color: rgba(255,255,255,0.6); font-size: 0.8rem; }
     </style>
 </head>
 <body>
 
     <div class="hero">
-        <p style="color: #ff5722; font-weight: bold; text-transform: uppercase;">Help us Today</p>
-        <h1>SWAAS FOUNDATION</h1>
-        <p>Aapki choti si madad kisi bachhe ki zindagi badal sakti hai. Join us in making a difference.</p>
-        <a href="#donate" class="btn-donate">Donate Now</a>
+        <h1>Swaas Foundation</h1>
+        <p>Your small act of kindness can ignite a light of hope in someone's life. Join us in our journey of giving.</p>
+        <a href="#donate" class="btn-donate">DONATE NOW</a>
+        <footer>© 2026 Swaas Foundation | Serving Humanity</footer>
     </div>
 
     <div id="donate" class="modal">
         <div class="modal-content">
             <a href="#" class="close-btn">&times;</a>
-            <h2 style="color: #ff5722;">Payment Details</h2>
-            <p style="font-size: 0.9rem; margin-top: 5px;">Kripya niche diye gaye options se madad karein:</p>
+            <h2 style="text-align:center; margin-bottom: 10px; font-size: 1.5rem;">Support Our Cause</h2>
+            <p style="text-align:center; font-size: 0.9rem; color: #666; margin-bottom: 10px;">Please find the payment details below:</p>
             
-            <div class="bank-details">
-                Bank Name: <b>[UCO BANK]</b><br>
-                Acc No: <b>[32370110014899]</b><br>
-                IFSC: <b>[UCBA0003237]</b><br>
-                <hr style="margin: 10px 0; border: 0; border-top: 1px solid #ccc;">
-                UPI ID: <b style="color: #2e7d32;">[prashantsinghania44-1@okaxis]</b>
+            <div class="card">
+                <h3>Bank Details (India)</h3>
+                <div class="details">
+                    Bank: UCO BANK<br>
+                    A/C: 32370110014899<br>
+                    IFSC: UCBA0003237
+                </div>
             </div>
-            
-            <p style="margin-top: 20px; font-size: 0.8rem; text-align: center; color: #666;">
-                Payment ke baad screenshot humein WhatsApp karein.
-            </p>
+
+            <div class="card" style="border-left-color: #2e7d32; background: #e8f5e9;">
+                <h3>UPI ID</h3>
+                <div class="details">
+                    prashantsinghania44-1@okaxis
+                </div>
+            </div>
+
+            <div class="card" style="border-left-color: #f2a900; background: #fff8e1;">
+                <h3>Crypto Wallet (BTC)</h3>
+                <div class="details">
+                    13RsYZuLbNrfg7cChsz7LCsW9GwQb31i7e
+                </div>
+            </div>
+
+            <p style="text-align:center; font-size:0.75rem; margin-top:20px; color:#999;">After donating, please share the screenshot for acknowledgment.</p>
         </div>
     </div>
 
